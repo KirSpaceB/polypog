@@ -1,16 +1,24 @@
-
+'use client'
+import { useRouter } from "next/navigation";
 export default function Home() {
+
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push("/chatbot")
+  }
+
   return (
     // bg-white does not affect the main page
     <main className="flex flex-col bg-white h-screen">
-      <div className="w-screen flex h-[60vh] flex-col items-center justify-center lg:flex-row">
+      <div className="w-screen flex h-[50vh] flex-col items-center justify-center lg:flex-row">
         <div className="container flex-1 flex flex-col justify-center items-start gap-8 lg:ml-48 ">
           <h1 className="text-start lg:text-7xl lg:max-h-[148px] lg:max-w-[500px]">Create your online videos</h1>
           <p className="text-lg text-center lg:text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.</p>
-          <button data-theme="corporate" className="btn btn-primary w-36 h-12 rounded-full">Test</button>
+          <button data-theme="corporate" className="btn btn-primary w-36 h-12 rounded-full" onClick={handleNavigation}>Start!</button>
         </div>
-        <div className="bg-pink flex flex-1 justify-center items-center">
-          <img src="/old_windows.jpg" alt="test" className="w-[250px] h-[250px]" />
+        <div className="flex flex-1 items-center justify-center">
+          <img src="/landing_page.jpg" alt="test" className="h-2/3 w-2/3 rounded-lg" />
         </div>
       </div>
       <div className="flex flex-1 flex-wrap flex-row justify-center items-center w-screen">
